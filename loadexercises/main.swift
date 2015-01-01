@@ -38,6 +38,7 @@ let cat4 = Category.create(managedObjectContext!, name: "Dribbelen en afpakken",
 let cat5 = Category.create(managedObjectContext!, name: "Scoren en tegenhouden", image: "soccer71")
 let cat6 = Category.create(managedObjectContext!, name: "Positiespel", image: "soccer18")
 let cat7 = Category.create(managedObjectContext!, name: "Standaard-situaties", image: "corner1")
+let cat8 = Category.create(managedObjectContext!, name: "Overtredingen", image: "football72")
 
 let categories = [
     cat1.name: cat1,
@@ -46,7 +47,8 @@ let categories = [
     cat4.name: cat4,
     cat5.name: cat5,
     cat6.name: cat6,
-    cat7.name: cat7
+    cat7.name: cat7,
+    cat8.name: cat8
 ]
 
 if ( !managedObjectContext!.save(&error) ) {
