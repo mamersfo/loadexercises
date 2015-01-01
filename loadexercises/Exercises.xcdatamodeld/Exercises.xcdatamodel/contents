@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="category" inverseEntity="Exercise" syncable="YES"/>
+    </entity>
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="exercises" inverseEntity="Category" syncable="YES"/>
+        <relationship name="trainings" toMany="YES" deletionRule="Cascade" destinationEntity="TrainingExercise" inverseName="exercise" inverseEntity="TrainingExercise" syncable="YES"/>
+    </entity>
+    <entity name="Training" representedClassName="Training" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exercises" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TrainingExercise" inverseName="training" inverseEntity="TrainingExercise" syncable="YES"/>
+    </entity>
+    <entity name="TrainingExercise" representedClassName="TrainingExercise" syncable="YES">
+        <relationship name="exercise" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="trainings" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="training" maxCount="1" deletionRule="Nullify" destinationEntity="Training" inverseName="exercises" inverseEntity="Training" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Exercise" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Training" positionX="-45" positionY="36" width="128" height="88"/>
+        <element name="TrainingExercise" positionX="-54" positionY="27" width="128" height="73"/>
+        <element name="Category" positionX="-63" positionY="36" width="128" height="88"/>
+    </elements>
+</model>
