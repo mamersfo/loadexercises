@@ -15,9 +15,9 @@
 		3A6826BA1A4EDA66006E3BFB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6826B91A4EDA66006E3BFB /* main.swift */; };
 		3A6826D61A4EE0BF006E3BFB /* out.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A6826D51A4EE0BF006E3BFB /* out.json */; };
 		3ADF0AA01A515079007B5C32 /* Exercises.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF0A9E1A515079007B5C32 /* Exercises.xcdatamodeld */; };
-		3AE920001A55863200F8BAB4 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE91FFF1A55863200F8BAB4 /* Exercise.swift */; };
 		3AE920021A55863200F8BAB4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE920011A55863200F8BAB4 /* Category.swift */; };
 		3AE920041A55865F00F8BAB4 /* Category+Crud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE920031A55865F00F8BAB4 /* Category+Crud.swift */; };
+		3AE9200A1A55D9D300F8BAB4 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE920091A55D9D300F8BAB4 /* Exercise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,9 +52,9 @@
 		3A6826B91A4EDA66006E3BFB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3A6826D51A4EE0BF006E3BFB /* out.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = out.json; path = ../../clj/org/out.json; sourceTree = "<group>"; };
 		3ADF0A9F1A515079007B5C32 /* Exercises.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Exercises.xcdatamodel; sourceTree = "<group>"; };
-		3AE91FFF1A55863200F8BAB4 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		3AE920011A55863200F8BAB4 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3AE920031A55865F00F8BAB4 /* Category+Crud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+Crud.swift"; sourceTree = "<group>"; };
+		3AE920091A55D9D300F8BAB4 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 			children = (
 				3AE920011A55863200F8BAB4 /* Category.swift */,
 				3AE920031A55865F00F8BAB4 /* Category+Crud.swift */,
-				3AE91FFF1A55863200F8BAB4 /* Exercise.swift */,
+				3AE920091A55D9D300F8BAB4 /* Exercise.swift */,
 				3A1238571A5349E50003D383 /* Exercise+Crud.swift */,
 				3A1238711A53D68D0003D383 /* Training.swift */,
 				3A1238591A534D6D0003D383 /* Training+Crud.swift */,
@@ -160,11 +160,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1238721A53D68D0003D383 /* Training.swift in Sources */,
-				3AE920001A55863200F8BAB4 /* Exercise.swift in Sources */,
 				3ADF0AA01A515079007B5C32 /* Exercises.xcdatamodeld in Sources */,
 				3A1238581A5349E50003D383 /* Exercise+Crud.swift in Sources */,
 				3A12385C1A534E8C0003D383 /* TrainingExercise+Crud.swift in Sources */,
 				3AE920021A55863200F8BAB4 /* Category.swift in Sources */,
+				3AE9200A1A55D9D300F8BAB4 /* Exercise.swift in Sources */,
 				3A6826BA1A4EDA66006E3BFB /* main.swift in Sources */,
 				3A1238741A53D68D0003D383 /* TrainingExercise.swift in Sources */,
 				3A12385A1A534D6D0003D383 /* Training+Crud.swift in Sources */,

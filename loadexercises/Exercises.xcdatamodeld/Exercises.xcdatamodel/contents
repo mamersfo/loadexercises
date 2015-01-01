@@ -8,6 +8,7 @@
     <entity name="Exercise" representedClassName="Exercise" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="variations" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="exercises" inverseEntity="Category" syncable="YES"/>
         <relationship name="trainings" toMany="YES" deletionRule="Cascade" destinationEntity="TrainingExercise" inverseName="exercise" inverseEntity="TrainingExercise" syncable="YES"/>
     </entity>
@@ -21,7 +22,7 @@
         <relationship name="training" maxCount="1" deletionRule="Nullify" destinationEntity="Training" inverseName="exercises" inverseEntity="Training" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Exercise" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Exercise" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="Training" positionX="-45" positionY="36" width="128" height="88"/>
         <element name="TrainingExercise" positionX="-54" positionY="27" width="128" height="73"/>
         <element name="Category" positionX="-63" positionY="36" width="128" height="88"/>
