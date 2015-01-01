@@ -77,8 +77,12 @@ if let dataPath = NSBundle.mainBundle().pathForResource("out", ofType: "json") {
                 }
             }
             
-            if let vars: String = e.objectForKey("variations") as? String{
+            if let vars: String = e.objectForKey("variations") as? String {
                 exercise.variations = vars
+            }
+            
+            if let tags: String = e.objectForKey("tags") as? String {
+                exercise.tags = tags
             }
             
             if ( !managedObjectContext!.save(&error) ) {
