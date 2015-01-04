@@ -7,6 +7,7 @@
     </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES">
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="station" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="tags" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uuid" attributeType="String" indexed="YES" syncable="YES"/>
@@ -32,7 +33,7 @@
     </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="36" width="128" height="88"/>
-        <element name="Exercise" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Exercise" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="Training" positionX="-45" positionY="36" width="128" height="88"/>
         <element name="TrainingExercise" positionX="-54" positionY="27" width="128" height="73"/>
         <element name="Variation" positionX="-54" positionY="45" width="128" height="118"/>

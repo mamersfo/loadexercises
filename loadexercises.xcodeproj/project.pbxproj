@@ -13,12 +13,12 @@
 		3A1238721A53D68D0003D383 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1238711A53D68D0003D383 /* Training.swift */; };
 		3A1238741A53D68D0003D383 /* TrainingExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1238731A53D68D0003D383 /* TrainingExercise.swift */; };
 		3A5D9D0C1A5853BB00DC1D97 /* Variation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D9D0B1A5853BB00DC1D97 /* Variation.swift */; };
-		3A5D9D0E1A58544000DC1D97 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D9D0D1A58544000DC1D97 /* Exercise.swift */; };
 		3A5D9D101A58546700DC1D97 /* Variation+Crud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D9D0F1A58546700DC1D97 /* Variation+Crud.swift */; };
 		3A5D9D121A5858FC00DC1D97 /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D9D111A5858FC00DC1D97 /* String+Util.swift */; };
 		3A6826BA1A4EDA66006E3BFB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6826B91A4EDA66006E3BFB /* main.swift */; };
-		3A6826D61A4EE0BF006E3BFB /* out.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A6826D51A4EE0BF006E3BFB /* out.json */; };
 		3ADF0AA01A515079007B5C32 /* Exercises.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF0A9E1A515079007B5C32 /* Exercises.xcdatamodeld */; };
+		3ADFFEBB1A595F7000476558 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADFFEBA1A595F7000476558 /* Exercise.swift */; };
+		3ADFFEBD1A59BDDC00476558 /* out.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3ADFFEBC1A59BDDC00476558 /* out.json */; };
 		3AE920021A55863200F8BAB4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE920011A55863200F8BAB4 /* Category.swift */; };
 		3AE920041A55865F00F8BAB4 /* Category+Crud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE920031A55865F00F8BAB4 /* Category+Crud.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +39,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				3A6826D61A4EE0BF006E3BFB /* out.json in CopyFiles */,
+				3ADFFEBD1A59BDDC00476558 /* out.json in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,13 +52,13 @@
 		3A1238711A53D68D0003D383 /* Training.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
 		3A1238731A53D68D0003D383 /* TrainingExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingExercise.swift; sourceTree = "<group>"; };
 		3A5D9D0B1A5853BB00DC1D97 /* Variation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variation.swift; sourceTree = "<group>"; };
-		3A5D9D0D1A58544000DC1D97 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		3A5D9D0F1A58546700DC1D97 /* Variation+Crud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Variation+Crud.swift"; sourceTree = "<group>"; };
 		3A5D9D111A5858FC00DC1D97 /* String+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		3A6826B61A4EDA66006E3BFB /* loadexercises */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = loadexercises; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A6826B91A4EDA66006E3BFB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		3A6826D51A4EE0BF006E3BFB /* out.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = out.json; path = ../../clj/org/out.json; sourceTree = "<group>"; };
 		3ADF0A9F1A515079007B5C32 /* Exercises.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Exercises.xcdatamodel; sourceTree = "<group>"; };
+		3ADFFEBA1A595F7000476558 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		3ADFFEBC1A59BDDC00476558 /* out.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = out.json; path = ../../clj/trainorg/out.json; sourceTree = "<group>"; };
 		3AE920011A55863200F8BAB4 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3AE920031A55865F00F8BAB4 /* Category+Crud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+Crud.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +77,7 @@
 		3A6826AD1A4EDA66006E3BFB = {
 			isa = PBXGroup;
 			children = (
-				3A6826D51A4EE0BF006E3BFB /* out.json */,
+				3ADFFEBC1A59BDDC00476558 /* out.json */,
 				3A6826B81A4EDA66006E3BFB /* loadexercises */,
 				3A6826B71A4EDA66006E3BFB /* Products */,
 			);
@@ -96,7 +96,7 @@
 			children = (
 				3AE920011A55863200F8BAB4 /* Category.swift */,
 				3AE920031A55865F00F8BAB4 /* Category+Crud.swift */,
-				3A5D9D0D1A58544000DC1D97 /* Exercise.swift */,
+				3ADFFEBA1A595F7000476558 /* Exercise.swift */,
 				3A1238571A5349E50003D383 /* Exercise+Crud.swift */,
 				3A5D9D111A5858FC00DC1D97 /* String+Util.swift */,
 				3A1238711A53D68D0003D383 /* Training.swift */,
@@ -176,8 +176,8 @@
 				3A12385C1A534E8C0003D383 /* TrainingExercise+Crud.swift in Sources */,
 				3AE920021A55863200F8BAB4 /* Category.swift in Sources */,
 				3A5D9D0C1A5853BB00DC1D97 /* Variation.swift in Sources */,
-				3A5D9D0E1A58544000DC1D97 /* Exercise.swift in Sources */,
 				3A6826BA1A4EDA66006E3BFB /* main.swift in Sources */,
+				3ADFFEBB1A595F7000476558 /* Exercise.swift in Sources */,
 				3A1238741A53D68D0003D383 /* TrainingExercise.swift in Sources */,
 				3A12385A1A534D6D0003D383 /* Training+Crud.swift in Sources */,
 				3AE920041A55865F00F8BAB4 /* Category+Crud.swift in Sources */,

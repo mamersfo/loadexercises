@@ -66,9 +66,7 @@ if let dataPath = NSBundle.mainBundle().pathForResource("out", ofType: "json") {
         for e in exercises {
             
             let name = e.objectForKey("name") as String!
-            println("exercise: \(name)")
             let uuid = e.objectForKey("uuid") as String!
-            println("uuid: \(uuid)")
             
             let exercise = Exercise.create(managedObjectContext!, uuid: uuid)
             exercise.name = name
@@ -85,6 +83,10 @@ if let dataPath = NSBundle.mainBundle().pathForResource("out", ofType: "json") {
             
             if let str = e.objectForKey("tags") as? String {
                 exercise.tags = str
+            }
+            
+            if let str = e.objectForKey("station") as? String {
+                exercise.station = str.toInt()!
             }
 
             if let str = e.objectForKey("variations") as? String {
