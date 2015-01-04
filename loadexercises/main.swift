@@ -8,11 +8,12 @@ var managedObjectModel: NSManagedObjectModel = {
 }()
 
 var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
+    var error: NSError? = nil
+
     var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
     
     let sqliteURL = NSURL(fileURLWithPath: "~/Code/scratch/ios/Training/Training/Exercises.sqlite".stringByExpandingTildeInPath)
-    
-    var error: NSError? = nil
+
     if coordinator!.addPersistentStoreWithType(
         NSSQLiteStoreType, configuration: nil, URL: sqliteURL, options: nil, error: &error) == nil {
         coordinator = nil
@@ -38,7 +39,7 @@ let cat4 = Category.create(managedObjectContext!, name: "Dribbelen en afpakken",
 let cat5 = Category.create(managedObjectContext!, name: "Scoren en tegenhouden", image: "soccer71")
 let cat6 = Category.create(managedObjectContext!, name: "Positiespel", image: "soccer18")
 let cat7 = Category.create(managedObjectContext!, name: "Standaard-situaties", image: "corner1")
-let cat8 = Category.create(managedObjectContext!, name: "Overtredingen", image: "football72")
+let cat8 = Category.create(managedObjectContext!, name: "Spelregels", image: "football72")
 
 let categories = [
     cat1.name: cat1,
@@ -64,27 +65,32 @@ if let dataPath = NSBundle.mainBundle().pathForResource("out", ofType: "json") {
         
         for e in exercises {
             
-            let exercise: Exercise = NSEntityDescription.insertNewObjectForEntityForName(
-                "Exercise", inManagedObjectContext: managedObjectContext!) as Exercise
+            let name = e.objectForKey("name") as String!
+            println("exercise: \(name)")
+            let uuid = e.objectForKey("uuid") as String!
+            println("uuid: \(uuid)")
             
-            exercise.name = e.objectForKey("name") as String
+            let exercise = Exercise.create(managedObjectContext!, uuid: uuid)
+            exercise.name = name
             
-            if let text: String = e.objectForKey("text") as? String {
-                exercise.text = text
+            var str: String!
+            
+            if let str = e.objectForKey("text") as? String {
+                exercise.text = str
             }
             
-            if let str: String = e.objectForKey("category") as? String {
-                if let category: Category = categories[str] as Category! {
-                    exercise.category = category
+            if let str = e.objectForKey("category") as? String {
+                exercise.category = categories[str]!
+            }
+            
+            if let str = e.objectForKey("tags") as? String {
+                exercise.tags = str
+            }
+
+            if let str = e.objectForKey("variations") as? String {
+                str.split(";").map {
+                    Variation.create(managedObjectContext!, string: $0, exercise: exercise)
                 }
-            }
-            
-            if let vars: String = e.objectForKey("variations") as? String {
-                exercise.variations = vars
-            }
-            
-            if let tags: String = e.objectForKey("tags") as? String {
-                exercise.tags = tags
             }
             
             if ( !managedObjectContext!.save(&error) ) {
@@ -94,7 +100,9 @@ if let dataPath = NSBundle.mainBundle().pathForResource("out", ofType: "json") {
     }
 }
 
-if let fetchResults = Exercise.findByName(managedObjectContext!, name: "Kruispas") as [Exercise]? {
+if let fetchResults = Exercise.findByName(managedObjectContext!, name: "Duo-loop") as [Exercise]? {
+    
+    println("exercise: \(fetchResults[0].name)")
 
     let training = Training.create(managedObjectContext!, name: "Foo")
     
@@ -104,8 +112,7 @@ if let fetchResults = Exercise.findByName(managedObjectContext!, name: "Kruispas
         println("Error saving entity: \(error)")
     }
     
-    let found = Training.findByName(managedObjectContext!, name: "Foo")
-    
-    println("found: \(found?[0].exercises.count)")
+    let t = Training.findByName(managedObjectContext!, name: "Foo")
+    println("found training: \(t?[0].exercises.count)")
 }
 

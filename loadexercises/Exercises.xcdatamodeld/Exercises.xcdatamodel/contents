@@ -6,12 +6,13 @@
         <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exercise" inverseName="category" inverseEntity="Exercise" syncable="YES"/>
     </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES">
-        <attribute name="name" attributeType="String" syncable="YES"/>
-        <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="tags" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="variations" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" attributeType="String" indexed="YES" syncable="YES"/>
         <relationship name="category" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="exercises" inverseEntity="Category" syncable="YES"/>
         <relationship name="trainings" toMany="YES" deletionRule="Cascade" destinationEntity="TrainingExercise" inverseName="exercise" inverseEntity="TrainingExercise" syncable="YES"/>
+        <relationship name="variations" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Variation" inverseName="exercise" inverseEntity="Variation" syncable="YES"/>
     </entity>
     <entity name="Training" representedClassName="Training" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
@@ -22,10 +23,18 @@
         <relationship name="exercise" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="trainings" inverseEntity="Exercise" syncable="YES"/>
         <relationship name="training" maxCount="1" deletionRule="Nullify" destinationEntity="Training" inverseName="exercises" inverseEntity="Training" syncable="YES"/>
     </entity>
+    <entity name="Variation" representedClassName="Variation" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="video" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exercise" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="variations" inverseEntity="Exercise" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="36" width="128" height="88"/>
-        <element name="Exercise" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Exercise" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="Training" positionX="-45" positionY="36" width="128" height="88"/>
         <element name="TrainingExercise" positionX="-54" positionY="27" width="128" height="73"/>
+        <element name="Variation" positionX="-54" positionY="45" width="128" height="118"/>
     </elements>
 </model>

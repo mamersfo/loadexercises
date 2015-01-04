@@ -2,10 +2,10 @@ import CoreData
 
 extension Exercise {
     
-    class func create(moc: NSManagedObjectContext, name: String) -> Exercise {
+    class func create(moc: NSManagedObjectContext, uuid: String) -> Exercise {
         let exercise: Exercise = NSEntityDescription.insertNewObjectForEntityForName(
             "Exercise", inManagedObjectContext: moc) as Exercise
-        exercise.name = name
+        exercise.uuid = uuid
         return exercise
     }
 

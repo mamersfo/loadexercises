@@ -5,10 +5,11 @@ import CoreData
 class Exercise: NSManagedObject {
 
     @NSManaged var name: String
-    @NSManaged var text: String
-    @NSManaged var variations: String
     @NSManaged var tags: String
+    @NSManaged var text: String
+    @NSManaged var uuid: String
     @NSManaged var category: Category
     @NSManaged var trainings: NSSet
+    @NSManaged var variations: NSOrderedSet
 
 }
