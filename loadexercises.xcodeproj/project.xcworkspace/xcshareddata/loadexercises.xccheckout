@@ -10,6 +10,8 @@
 	<string>loadexercises</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>9687783DF58D72AE9452F79C65C6B54E7682B9A6</key>
+		<string>github.com:mamersfo/trainorg.git</string>
 		<key>EDB11A8F2CFB6C5722B1CA050B731398C2A93EAD</key>
 		<string>github.com:mamersfo/loadexercises.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>loadexercises.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>9687783DF58D72AE9452F79C65C6B54E7682B9A6</key>
+		<string>../../../clj/trainorg</string>
 		<key>EDB11A8F2CFB6C5722B1CA050B731398C2A93EAD</key>
 		<string>../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>EDB11A8F2CFB6C5722B1CA050B731398C2A93EAD</string>
 			<key>IDESourceControlWCCName</key>
 			<string>loadexercises</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9687783DF58D72AE9452F79C65C6B54E7682B9A6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>trainorg</string>
 		</dict>
 	</array>
 </dict>

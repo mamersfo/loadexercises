@@ -12,8 +12,14 @@ var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
 
     var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
     
-    let sqliteURL = NSURL(fileURLWithPath: "~/Code/scratch/ios/Training/Training/Exercises.sqlite".stringByExpandingTildeInPath)
+    let sqliteURL = NSURL(fileURLWithPath: "~/Code/scratch/swift/Training/Training/Exercises.sqlite".stringByExpandingTildeInPath)
 
+    if (!NSFileManager.defaultManager().removeItemAtURL(sqliteURL!, error: &error)) {
+        println("Error deleting file: \(error)")
+    }
+    
+    println("sqliteURL: \(sqliteURL)")
+    
     if coordinator!.addPersistentStoreWithType(
         NSSQLiteStoreType, configuration: nil, URL: sqliteURL, options: nil, error: &error) == nil {
         coordinator = nil
@@ -33,13 +39,14 @@ var managedObjectContext: NSManagedObjectContext? = {
 var error: NSError? = nil
 
 let cat1 = Category.create(managedObjectContext!, name: "Looptraining", image: "running30")
-let cat2 = Category.create(managedObjectContext!, name: "Kracht-training", image: "weightlift")
-let cat3 = Category.create(managedObjectContext!, name: "Samenspelen en druk zetten", image: "planning1")
-let cat4 = Category.create(managedObjectContext!, name: "Dribbelen en afpakken", image: "football6")
-let cat5 = Category.create(managedObjectContext!, name: "Scoren en tegenhouden", image: "soccer71")
-let cat6 = Category.create(managedObjectContext!, name: "Positiespel", image: "soccer18")
-let cat7 = Category.create(managedObjectContext!, name: "Standaard-situaties", image: "corner1")
-let cat8 = Category.create(managedObjectContext!, name: "Spelregels", image: "football72")
+let cat2 = Category.create(managedObjectContext!, name: "Krachttraining", image: "weightlift")
+let cat3 = Category.create(managedObjectContext!, name: "Baltraining", image: "soccer66")
+let cat4 = Category.create(managedObjectContext!, name: "Samenspelen en druk zetten", image: "planning1")
+let cat5 = Category.create(managedObjectContext!, name: "Dribbelen en afpakken", image: "football6")
+let cat6 = Category.create(managedObjectContext!, name: "Scoren en tegenhouden", image: "soccer71")
+let cat7 = Category.create(managedObjectContext!, name: "Positiespel", image: "soccer18")
+let cat8 = Category.create(managedObjectContext!, name: "Standaard-situaties", image: "corner1")
+let cat9 = Category.create(managedObjectContext!, name: "Spelregels", image: "football72")
 
 let categories = [
     cat1.name: cat1,
@@ -49,7 +56,8 @@ let categories = [
     cat5.name: cat5,
     cat6.name: cat6,
     cat7.name: cat7,
-    cat8.name: cat8
+    cat8.name: cat8,
+    cat9.name: cat9
 ]
 
 if ( !managedObjectContext!.save(&error) ) {
@@ -90,8 +98,11 @@ if let dataPath = NSBundle.mainBundle().pathForResource("out", ofType: "json") {
             }
 
             if let str = e.objectForKey("variations") as? String {
-                str.split(";").map {
-                    Variation.create(managedObjectContext!, string: $0, exercise: exercise)
+                
+                if str != "" {
+                    str.split(";").map {
+                        Variation.create(managedObjectContext!, string: $0, exercise: exercise)
+                    }
                 }
             }
             

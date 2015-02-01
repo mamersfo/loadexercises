@@ -3,6 +3,7 @@ import CoreData
 extension Variation {
     
     class func create(moc: NSManagedObjectContext, string: String, exercise: Exercise) -> Variation {
+        
         let variation = NSEntityDescription.insertNewObjectForEntityForName(
             "Variation", inManagedObjectContext: moc) as Variation
         
