@@ -20,6 +20,8 @@ extension Variation {
                         variation.source = params[1]
                     case "v":
                         variation.video = params[1]
+                    case "t":
+                        variation.time = params[1]
                     default:
                         continue
                     }
